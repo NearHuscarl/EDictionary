@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<FontFamily x:Key="FontAwesome">pack://application:,,,/Fonts/#Font Awesome 5 Free Solid</FontFamily>
+	<FontFamily x:Key="SourceSansProSemiBold">pack://application:,,,/Fonts/#Source Sans Pro SemiBold</FontFamily>
+	<FontFamily x:Key="SourceSansPro">pack://application:,,,/Fonts/#Source Sans Pro</FontFamily>
+	<FontFamily x:Key="Quicksand">pack://application:,,,/Fonts/#Quicksand</FontFamily>
+	<FontFamily x:Key="QuicksandMedium">pack://application:,,,/Fonts/#Quicksand Medium</FontFamily>
+	<FontFamily x:Key="QuicksandBold">pack://application:,,,/Fonts/#Quicksand Bold</FontFamily>
+	<FontFamily x:Key="TitilliumWeb">pack://application:,,,/Fonts/#Titillium Web SemiBold</FontFamily>
+	<FontFamily x:Key="PTSans">pack://application:,,,/Fonts/#PT Sans</FontFamily>
+	<FontFamily x:Key="Catamaran">pack://application:,,,/Fonts/#Catamaran</FontFamily>
+
+</ResourceDictionary>

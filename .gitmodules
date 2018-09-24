@@ -1,0 +1,6 @@
+[submodule "tool/api"]
+	path = tool/api
+	url = https://github.com/NearHuscarl/oxford-dictionary-api
+[submodule "src/EDictionary/Data"]
+	path = src/EDictionary/Data
+	url = https://github.com/NearHuscarl/dictionary-data.git

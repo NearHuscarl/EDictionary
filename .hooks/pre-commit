@@ -1,0 +1,14 @@
+#!/bin/sh
+
+source '.hooks/version.sh'
+
+# Pass if version aren't defined
+[ "$CURRENT_VERSION" ] || exit 0
+
+echo
+echo "NOTICE ** Updating README.md with latest version ${CURRENT_VERSION}"
+echo
+
+git add README.md
+git add setup.cfg
+git add src/EDictionary.Core/Properties/AssemblyInfo.cs

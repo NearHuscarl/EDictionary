@@ -1,0 +1,5 @@
+#!/bin/sh
+
+source '.hooks/version.sh'
+
+sed -i "1 s/^.*$/${CURRENT_VERSION}: /g" $1

@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+										xmlns:fa="http://schemas.fontawesome.io/icons/"
+										xmlns:clr="clr-namespace:System;assembly=mscorlib"
+										xmlns:sys="BCLSystem">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="Colors.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<clr:String x:Key="SearchIcon">&#xf002;</clr:String>
+	<clr:String x:Key="NextArrowIcon">&#xf105;</clr:String>
+	<clr:String x:Key="PrevArrowIcon">&#xf104;</clr:String>
+	<clr:String x:Key="SpeakerIcon">&#xf028;</clr:String>
+	<clr:String x:Key="PlusIcon">&#xf067;</clr:String>
+	<!--<clr:String x:Key="CogIcon">&#xf013;</clr:String>-->
+	<!--<clr:String x:Key="QuestionIcon">&#xf128;</clr:String>-->
+	<clr:String x:Key="GithubIcon">&#xf092;</clr:String>
+
+	<fa:ImageAwesome x:Key="SpinnerIcon"
+			Foreground="{StaticResource LightYellow}"
+			Icon="Refresh"
+			Spin="True"
+			Height="12"
+			SpinDuration="1" />
+
+	<Style TargetType="fa:ImageAwesome">
+		<Setter Property="Height" Value="12"/>
+	</Style>
+
+	<fa:ImageAwesome x:Key="HomeIcon" Foreground="{StaticResource Cyan}" Icon="Home"/>
+	<fa:ImageAwesome x:Key="ToggleOnIcon" Foreground="{StaticResource LightGreen}" Icon="ToggleOn"/>
+	<fa:ImageAwesome x:Key="ToggleOffIcon" Foreground="{StaticResource LightRed}" Icon="ToggleOff"/>
+	<fa:ImageAwesome x:Key="CogIcon" Foreground="{StaticResource Cyan}" Icon="Cog"/>
+	<fa:ImageAwesome x:Key="QuestionIcon" Foreground="{StaticResource Cyan}" Icon="Question"/>
+	<fa:ImageAwesome x:Key="PowerOffIcon" Icon="PowerOff" Foreground="{StaticResource LightOrange}" />
+
+</ResourceDictionary>

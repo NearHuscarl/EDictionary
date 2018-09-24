@@ -1,0 +1,56 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+	xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="Controls.xaml"/>
+		<ResourceDictionary Source="Colors.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<Style TargetType="{x:Type toolkit:RichTextBox}" BasedOn="{StaticResource BaseStyle}">
+
+		<Setter Property="Cursor" Value="Arrow" />
+		<Setter Property="HorizontalAlignment" Value="Left"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="VerticalAlignment" Value="Stretch"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="Foreground" Value="{StaticResource Silver}"/>
+		<Setter Property="Background" Value="{StaticResource Black2}"/>
+		<Setter Property="IsReadOnly" Value="True"/>
+		<Setter Property="SelectionBrush" Value="{StaticResource Cyan}"/>
+		<Setter Property="SelectionOpacity" Value="0.65" />
+		<Setter Property="FontFamily" Value="{StaticResource TitilliumWeb}"/>
+
+	</Style>
+
+	<Style x:Key="TextBlockBase" TargetType="{x:Type TextBlock}" >
+
+		<Setter Property="Cursor" Value="Arrow" />
+		<Setter Property="Padding" Value="3"/>
+		<Setter Property="HorizontalAlignment" Value="Left"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="VerticalAlignment" Value="Stretch"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="Foreground" Value="{StaticResource Silver}"/>
+		<Setter Property="Background" Value="{StaticResource Black2}"/>
+		<Setter Property="FontFamily" Value="{StaticResource TitilliumWeb}"/>
+
+	</Style>
+
+	<Style TargetType="{x:Type avalonEdit:TextArea}">
+		<Setter Property="SelectionBrush" Value="{StaticResource LightCyan}"/>
+		<Setter Property="SelectionForeground" Value="{StaticResource White}"/>
+		<Setter Property="SelectionCornerRadius" Value="0" />
+		<Setter Property="SelectionBorder">
+			<Setter.Value>
+				<Pen Brush="{StaticResource LightCyan}" Thickness="1"/>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!--<Style TargetType="{x:Type avalonEdit:TextArea}">
+		<Setter Property="Care" Value="{StaticResource LightCyan}"/>
+	</Style>-->
+
+</ResourceDictionary>

@@ -1,0 +1,480 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:EDictionary.Theme.Styles"
+	xmlns:fa="http://schemas.fontawesome.io/icons/">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="Colors.xaml"/>
+		<ResourceDictionary Source="Fonts.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+	
+	<ControlTemplate x:Key="ButtonBaseTemplate" TargetType="{x:Type Button}">
+		<!-- Need this for hover event to work -->
+		<Border Background="{TemplateBinding Background}" 
+      BorderBrush="{TemplateBinding BorderBrush}"
+			BorderThickness="{TemplateBinding BorderThickness}">
+			<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		</Border>
+	</ControlTemplate>
+
+	<Style TargetType="Button" x:Key="ButtonBase">
+
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="BorderBrush" Value="{x:Null}"/>
+		<Setter Property="Template" Value="{StaticResource ButtonBaseTemplate}"/>
+
+	</Style>
+
+	<Style TargetType="Button" x:Key="IconButton" BasedOn="{StaticResource ButtonBase}">
+
+		<Setter Property="Background" Value="{StaticResource LightCyan}"/>
+		<Setter Property="Foreground" Value="{StaticResource Cyan}"/>
+		<Setter Property="Width" Value="24"/>
+		<Setter Property="Height" Value="24"/>
+		<Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
+		<Setter Property="FontSize" Value="12"/>
+
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource ExtraLightCyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource BlueColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightCyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource CyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+		</Style.Triggers>
+		 
+	</Style>
+
+	<Style TargetType="Button" x:Key="TextButton" BasedOn="{StaticResource ButtonBase}">
+		<Setter Property="Background" Value="{StaticResource Cyan}"/>
+		<Setter Property="Foreground" Value="{StaticResource White}"/>
+		<Setter Property="Width" Value="80"/>
+		<Setter Property="Height" Value="25"/>
+		<Setter Property="FontFamily" Value="{StaticResource Quicksand}"/>
+		
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightCyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource CyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<!--<Trigger Property="IsEnabled" Value="False">
+
+				<Trigger.EnterActions>
+					<BeginStoryboard>
+						<Storyboard>
+							<ColorAnimation To="{StaticResource Black3Color}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+							<ColorAnimation To="{StaticResource SilverColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+						</Storyboard>
+					</BeginStoryboard>
+				</Trigger.EnterActions>
+				
+				<Trigger.ExitActions>
+					<BeginStoryboard>
+						<Storyboard>
+							<ColorAnimation To="{StaticResource CyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+							<ColorAnimation To="{StaticResource WhiteColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+						</Storyboard>
+					</BeginStoryboard>
+				</Trigger.ExitActions>
+
+			</Trigger>-->
+		</Style.Triggers>
+	</Style>
+	
+	<Style TargetType="Button" x:Key="SpeakerButton" BasedOn="{StaticResource IconButton}">
+		 
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="FontSize" Value="17"/>
+		<Setter Property="Content" Value="{DynamicResource SpeakerIcon}"/>
+
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="Transparent" Duration="0:0:0.0" Storyboard.TargetProperty="Background.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="Transparent" Duration="0:0:0.0" Storyboard.TargetProperty="Background.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+		</Style.Triggers>
+
+	</Style>
+	
+	
+	<Style TargetType="Button" x:Key="BrEButton" BasedOn="{StaticResource SpeakerButton}">
+
+		<Setter Property="Foreground" Value="{StaticResource LightBlue}"/>
+
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource BlueColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightBlueColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+		</Style.Triggers>
+
+	</Style>
+
+	<Style TargetType="Button" x:Key="NAmEButton" BasedOn="{StaticResource SpeakerButton}">
+
+		<Setter Property="Foreground" Value="{StaticResource LightRed}"/>
+
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource RedColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightRedColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+		</Style.Triggers>
+
+	</Style>
+
+	<Style TargetType="Button" x:Key="ArrowButton" BasedOn="{StaticResource IconButton}">
+
+		<Setter Property="Background" Value="{StaticResource LightMagenta}"/>
+		<Setter Property="Foreground" Value="{StaticResource ExtraLightMagenta}"/>
+		<Setter Property="FontSize" Value="20"/>
+
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource DarkMagentaColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource LightMagentaColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightMagentaColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource ExtraLightMagentaColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+		</Style.Triggers>
+		 
+	</Style>
+
+	<Style TargetType="Button" x:Key="NextButton" BasedOn="{StaticResource ArrowButton}">
+		<Setter Property="Content" Value="{DynamicResource NextArrowIcon}"/>
+	</Style>
+
+	<Style TargetType="Button" x:Key="PrevButton" BasedOn="{StaticResource ArrowButton}">
+		<Setter Property="Content" Value="{DynamicResource PrevArrowIcon}"/>
+	</Style>
+
+	<Style TargetType="Button" x:Key="SearchButton" BasedOn="{StaticResource IconButton}">
+
+		<Setter Property="Background" Value="{StaticResource LightCyan}"/>
+		<Setter Property="Foreground" Value="{StaticResource Cyan}"/>
+		<Setter Property="Content" Value="{StaticResource SearchIcon}"/>
+
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightYellowColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource DarkYellowColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightCyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource CyanColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+		</Style.Triggers>
+
+	</Style>
+
+	<Style TargetType="Button" x:Key="PlusButton" BasedOn="{StaticResource IconButton}">
+
+		<Setter Property="Background" Value="{StaticResource Yellow}"/>
+		<Setter Property="Foreground" Value="{StaticResource ExtraLightYellow}"/>
+		<Setter Property="Content" Value="{DynamicResource PlusIcon}"/>
+
+		<Style.Triggers>
+			<EventTrigger RoutedEvent="MouseEnter">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource LightYellowColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource WhiteColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+
+			<EventTrigger RoutedEvent="MouseLeave">
+				<BeginStoryboard>
+					<Storyboard>
+						<ColorAnimation To="{StaticResource YellowColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Background.Color" />
+						<ColorAnimation To="{StaticResource ExtraLightYellowColor}" Duration="0:0:0.15" Storyboard.TargetProperty="Foreground.Color" />
+					</Storyboard>
+				</BeginStoryboard>
+			</EventTrigger>
+		</Style.Triggers>
+
+	</Style>
+
+	<Style TargetType="Button" x:Key="WindowButton" BasedOn="{StaticResource ButtonBase}">
+		<Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
+	  <Setter Property="Height" Value="25"/>
+	  <Setter Property="Width" Value="25"/>
+		<Setter Property="VerticalAlignment" Value="Top"/>
+	  <Setter Property="HorizontalAlignment" Value="Right"/>
+		<Setter Property="BorderThickness" Value="0"/>
+	</Style>
+
+	<Style TargetType="Button" x:Key="CloseButton" BasedOn="{StaticResource WindowButton}">
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+
+					<Grid>
+						<fa:ImageAwesome RenderTransformOrigin="0.5,0.5" Height="14" Width="14" Foreground="{StaticResource LightRed}" Name="Circle" Icon="Circle" />
+						<fa:ImageAwesome RenderTransformOrigin="0.5,0.5" Height="8" Width="8" Foreground="{StaticResource Red}" Name="Close" Icon="Times" Opacity="0">
+							<fa:ImageAwesome.RenderTransform>
+								<RotateTransform/>
+							</fa:ImageAwesome.RenderTransform>
+						</fa:ImageAwesome>
+					</Grid>
+
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="MouseDownTimeLine">
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource ExtraLightRedColor}" Duration="0:0:0.15" />
+							<ColorAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightRedColor}" Duration="0:0:0.15" />
+						</Storyboard>
+								 
+						<Storyboard x:Key="MouseUpTimeLine">
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightRedColor}" Duration="0:0:0.15" />
+							<ColorAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource RedColor}" Duration="0:0:0.15" />
+						</Storyboard>
+								 
+						<Storyboard x:Key="MouseEnterTimeLine">
+							<DoubleAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.25"/>
+							<DoubleAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)" From="0" To="90" Duration="0:0:0.3" />
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightRedColor}" Duration="0:0:0.15" />
+						</Storyboard>
+
+						<Storyboard x:Key="MouseExitTimeLine">
+							<DoubleAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.25"/>
+							<DoubleAnimation Storyboard.TargetName="Close" Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)" From="90" To="0" Duration="0:0:0.3" />
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource RedColor}" Duration="0:0:0.15" />
+						</Storyboard>
+					</ControlTemplate.Resources>
+							
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseEnterTimeLine}"/>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseExitTimeLine}"/>
+							</Trigger.ExitActions>
+						</Trigger>
+
+						<Trigger Property="IsPressed" Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseDownTimeLine}"/>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseUpTimeLine}"/>
+							</Trigger.ExitActions>
+						</Trigger>
+					</ControlTemplate.Triggers>
+
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+
+	</Style>
+
+	<Style TargetType="Button" x:Key="MaximizeButton" BasedOn="{StaticResource WindowButton}">
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+
+					<Grid>
+						<fa:ImageAwesome RenderTransformOrigin="0.5,0.5" Height="14" Width="14" Foreground="{StaticResource LightGreen}" Name="Circle" Icon="Circle" />
+						<fa:ImageAwesome RenderTransformOrigin="0.5,0.5" Height="8" Width="8" Foreground="{StaticResource DarkGreen}" Name="Minimize" Icon="Sort" Opacity="0">
+							<fa:ImageAwesome.RenderTransform>
+								<RotateTransform/>
+							</fa:ImageAwesome.RenderTransform>
+						</fa:ImageAwesome>
+					</Grid>
+
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="MouseDownTimeLine">
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource ExtraLightGreenColor}" Duration="0:0:0.15" />
+							<ColorAnimation Storyboard.TargetName="Minimize" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightGreenColor}" Duration="0:0:0.15" />
+						</Storyboard>
+
+						<Storyboard x:Key="MouseUpTimeLine">
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightGreenColor}" Duration="0:0:0.15" />
+							<ColorAnimation Storyboard.TargetName="Minimize" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource GreenColor}" Duration="0:0:0.15" />
+						</Storyboard>
+
+						<Storyboard x:Key="MouseEnterTimeLine">
+							<DoubleAnimation Storyboard.TargetName="Minimize" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.25"/>
+							<DoubleAnimation Storyboard.TargetName="Minimize" Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)" From="135" To="225" Duration="0:0:0.3" />
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightGreenColor}" Duration="0:0:0.15" />
+						</Storyboard>
+
+						<Storyboard x:Key="MouseExitTimeLine">
+							<DoubleAnimation Storyboard.TargetName="Minimize" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.25"/>
+							<DoubleAnimation Storyboard.TargetName="Minimize" Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)" From="225" To="135" Duration="0:0:0.3" />
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource GreenColor}" Duration="0:0:0.15" />
+						</Storyboard>
+					</ControlTemplate.Resources>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseEnterTimeLine}"/>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseExitTimeLine}"/>
+							</Trigger.ExitActions>
+						</Trigger>
+
+						<Trigger Property="IsPressed" Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseDownTimeLine}"/>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseUpTimeLine}"/>
+							</Trigger.ExitActions>
+						</Trigger>
+					</ControlTemplate.Triggers>
+
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+
+	</Style>
+
+	<Style TargetType="Button" x:Key="MinimizeButton" BasedOn="{StaticResource WindowButton}">
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+
+					<Grid>
+						<fa:ImageAwesome RenderTransformOrigin="0.5,0.5" Height="14" Width="14" Foreground="{StaticResource Yellow}" Name="Circle" Icon="Circle" />
+						<fa:ImageAwesome RenderTransformOrigin="0.5,0.5" Height="8" Width="8" Foreground="{StaticResource DarkYellow}" Name="Expand" Icon="Minus" Opacity="0">
+							<fa:ImageAwesome.RenderTransform>
+								<RotateTransform/>
+							</fa:ImageAwesome.RenderTransform>
+						</fa:ImageAwesome>
+					</Grid>
+
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="MouseDownTimeLine">
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource ExtraLightYellowColor}" Duration="0:0:0.15" />
+							<ColorAnimation Storyboard.TargetName="Expand" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource YellowColor}" Duration="0:0:0.15" />
+						</Storyboard>
+
+						<Storyboard x:Key="MouseUpTimeLine">
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightYellowColor}" Duration="0:0:0.15" />
+							<ColorAnimation Storyboard.TargetName="Expand" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource DarkYellowColor}" Duration="0:0:0.15" />
+						</Storyboard>
+
+						<Storyboard x:Key="MouseEnterTimeLine">
+							<DoubleAnimation Storyboard.TargetName="Expand" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.25"/>
+							<DoubleAnimation Storyboard.TargetName="Expand" Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)" From="90" To="180" Duration="0:0:0.3" />
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource LightYellowColor}" Duration="0:0:0.15" />
+						</Storyboard>
+
+						<Storyboard x:Key="MouseExitTimeLine">
+							<DoubleAnimation Storyboard.TargetName="Expand" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.25"/>
+							<DoubleAnimation Storyboard.TargetName="Expand" Storyboard.TargetProperty="(RenderTransform).(RotateTransform.Angle)" From="180" To="90" Duration="0:0:0.3" />
+							<ColorAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Foreground.Color" To="{StaticResource YellowColor}" Duration="0:0:0.15" />
+						</Storyboard>
+					</ControlTemplate.Resources>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseEnterTimeLine}"/>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseExitTimeLine}"/>
+							</Trigger.ExitActions>
+						</Trigger>
+
+						<Trigger Property="IsPressed" Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseDownTimeLine}"/>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard Storyboard="{StaticResource MouseUpTimeLine}"/>
+							</Trigger.ExitActions>
+						</Trigger>
+					</ControlTemplate.Triggers>
+
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+
+	</Style>
+
+</ResourceDictionary>

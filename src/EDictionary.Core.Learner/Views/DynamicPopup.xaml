@@ -1,0 +1,24 @@
+﻿<Window x:Class="EDictionary.Core.Learner.Views.DynamicPopup"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:EDictionary.Core.Learner.Views"
+	xmlns:view="clr-namespace:EDictionary.Core.Views;assembly=EDictionary"
+	mc:Ignorable="d"
+	WindowStyle="None"
+	AllowsTransparency="True"
+	Width="300"
+	Height="220"
+	Topmost="True"
+	Background="{StaticResource Black2}">
+
+	<view:DefinitionTextbox Grid.Row="1" 
+			Padding="5"
+			NameFontSize="15"
+			WordformFontSize="12"
+			AudioButtonSize="12"
+			PronunciationFontSize="12"
+			DefinitionFontSize="12"/>
+
+</Window>

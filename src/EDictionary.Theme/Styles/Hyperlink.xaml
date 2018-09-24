@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="Colors.xaml"/>
+		<ResourceDictionary Source="Fonts.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<Style TargetType="Hyperlink">
+
+		<Setter Property="TextDecorations" Value=""/>
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+
+		<Setter Property="Foreground" Value="{StaticResource LightCyan}"/>
+		<Setter Property="FontFamily" Value="{StaticResource QuicksandMedium}"/>
+
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Foreground" Value="{StaticResource LightYellow}" />
+			</Trigger>
+		</Style.Triggers>
+
+	</Style>
+	
+</ResourceDictionary>

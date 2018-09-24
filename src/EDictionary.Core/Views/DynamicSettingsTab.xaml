@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="EDictionary.Core.Views.DynamicSettingsTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EDictionary.Core.Views"
+						 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="280" d:DesignWidth="350">
+	<Grid Background="{StaticResource Black1}">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="90"/>
+			<RowDefinition Height="110"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Orientation="Vertical" Grid.Row="1"
+			Margin="10,0,0,0">
+
+			<Label
+				Style="{StaticResource SmallHeaderLabel}"
+				Content="Behavior"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Left"/>
+			
+			<CheckBox Grid.Row="1" Grid.Column="0"
+				Style="{StaticResource CheckboxBase}"
+				IsChecked="{Binding AutoCopyToClipboard}"
+				Content="Auto copy to clipboard"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Left"
+				Margin="10,5,0,0"
+				ToolTip="If checked, it will auto copy the selected word after every double click"/>
+			
+			<CheckBox Grid.Row="1" Grid.Column="0"
+				Style="{StaticResource CheckboxBase}"
+				IsChecked="{Binding UseTriggerKey}"
+				Content="Use trigger key"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Left"
+				Margin="10,5,0,0"
+				ToolTip="Whether to use a modified key to open dynamic popup or not"/>
+
+		</StackPanel>
+
+
+		<StackPanel Orientation="Vertical" Grid.Row="2"
+			Margin="10,0,0,0">
+
+			<Label
+				Style="{StaticResource SmallHeaderLabel}"
+				Content="Shortcut"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Left"/>
+
+			<Label Margin="10,0,0,0"
+					Style="{StaticResource NormalLabel}"
+					Content="Trigger Key"/>
+
+			<ComboBox Margin="10,0,0,0"
+				ItemsSource="{Binding TriggerKeys}"
+				SelectedItem="{Binding SelectedKey}"
+				IsEnabled="{Binding CanEditTriggerKey}"
+				HorizontalAlignment="Left"
+				Width="80">
+			</ComboBox>
+
+		</StackPanel>
+
+	</Grid>
+</UserControl>

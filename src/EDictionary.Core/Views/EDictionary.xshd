@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<SyntaxDefinition name="EDictionary" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	
+	<Color name="Header" foreground="Yellow" fontWeight="bold" exampleText="1. minutes/hours/years, etc." />
+	<Color name="Label" foreground="Gray" exampleText="[uncountable, countable]" />
+	<Color name="Example" foreground="Blue" fontStyle="italic" exampleText="• What time do you finish work?" />
+	<Color name="WrongWord" foreground="Red" exampleText="No match for [Wrong Word] in the dictionary" />
+
+	<!-- This is the main ruleset. -->
+	<RuleSet>
+
+		<!-- Extra Examples -->
+		<Span color="Example" >
+			<Begin>•</Begin>
+			<End>\n</End>
+		</Span>
+
+		<!-- Headline -->
+		<Rule color="Header" >
+			^(Idioms|Other\sExamples)$
+		</Rule>
+		
+		<!-- Definition Namespaces -->
+		<Rule color="Header">
+			^[0-9]+\..*$  # 1. lorem ipsum
+		</Rule>
+		
+		<!-- Label -->
+		<Rule color="Label">
+			\[(countable|uncountable|singular|plural|transitive|intransitive)(,[ a-z]+)?\]
+			|
+			\[(only\sbefore)\s\S+\]
+			|
+			\(((especially|both)\s)?(British\s+English|North\sAmerican\sEnglish)\)
+			|
+			\((formal|informal|saying|old-fashioned|humorous|literary)(,[ a-z]+)?\)
+			|
+			\(of\ssoldiers\)
+		</Rule>
+
+		<!-- No word match -->
+		<Rule color="WrongWord">
+			".+"(?=\sin\sthe\sdictionary)
+		</Rule>
+		
+	</RuleSet>
+</SyntaxDefinition>

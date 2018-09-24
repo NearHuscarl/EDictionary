@@ -1,0 +1,43 @@
+﻿<Application x:Class="EDictionary.Core.Learner.App"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:EDictionary.Core.Learner"
+	xmlns:tb="http://www.hardcodet.net/taskbar"
+	xmlns:converter="clr-namespace:EDictionary.Core.Converters;assembly=EDictionary"
+	ShutdownMode="OnExplicitShutdown">
+
+	<!--
+				Note that this application does not have a StartupUri declared, so no Window is automatically loaded.
+				Also, the ShutdownMode was set to explicit, so we have to close the application programmatically
+	-->
+
+	<Application.Resources>
+		<ResourceDictionary>
+
+			<converter:StringToResourceConverter x:Key="ResourceConverter" />
+
+			<ContextMenu x:Shared="false" x:Key="SysTrayMenu">
+				<MenuItem Header="EDictionary" Icon="{StaticResource HomeIcon}" Command="{Binding OpenMainDictionaryCommand}"/>
+				<MenuItem Header="{Binding NextStatus}"
+					Icon="{Binding StatusIcon, Converter={StaticResource ResourceConverter}}"
+					Command="{Binding ToggleActiveCommand}" />
+				<!--<Separator Background="{StaticResource LightCyan}" />-->
+				<MenuItem Header="Settings" Icon="{StaticResource CogIcon}" Command="{Binding OpenSettingsCommand}" />
+				<MenuItem Header="About" Icon="{StaticResource QuestionIcon}" Command="{Binding OpenAboutCommand}" />
+				<MenuItem Header="Exit" Icon="{StaticResource PowerOffIcon}" Command="{Binding ExitAppCommand}" />
+			</ContextMenu>
+
+			<tb:TaskbarIcon x:Key="EDTaskbarIcon"
+				IconSource="/EDictionary.ico"
+				ToolTipText="EDictionary Learner"
+				LeftClickCommand="{Binding OpenLearnerBalloonCommand}"
+				ContextMenu="{StaticResource SysTrayMenu}" />
+
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/EDictionary.Theme;component/Themes/Generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+
+		</ResourceDictionary>
+	</Application.Resources>
+
+</Application>

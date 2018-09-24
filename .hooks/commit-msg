@@ -1,0 +1,17 @@
+#!/bin/sh
+
+source '.hooks/version.sh'
+
+ERROR_MSG="Aborting empty commit"
+
+print_error() { # {{{
+	echo
+	echo "$ERROR_MSG" >&2
+	echo
+}
+# }}}
+
+if grep -iq "^$CURRENT_VERSION: $" "$1"; then
+	print_error
+	exit 1
+fi

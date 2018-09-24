@@ -1,0 +1,17 @@
+.git
+.vs
+Debug/
+Release/
+
+*.json
+*.ogg
+*.mp3
+*.pyc
+*.log
+
+packages/
+!packages/repositories.config
+StyleCop.Cache
+
+tool/cache/
+todo.txt
