@@ -7,6 +7,8 @@
   <a href="https://github.com/NearHuscarl/E-Dictionary/releases"><img src="https://img.shields.io/badge/Version-2.0.2-green.svg?longCache=true" alt="Version"></a>
 </p>
 
+### Java implementation: [JDictionary]
+
 EDitionary is a desktop application project for uni assignment written in WPF. It has basic feature (english translator) along with some add-ons to make learning English more convenient. Note: Some of the features is still in proof-of-concept state 
 
 ## Main Features
@@ -57,3 +59,5 @@ The project is written in .NET Framework 4.6 and C# 6.0. Compiled using Visual S
 
 ## License
 **[BSD 3 Clauses](https://github.com/NearHuscarl/i3-quake/blob/master/LICENSE.md)**
+
+[JDictionary]: https://github.com/NearHuscarl/JDictionary
