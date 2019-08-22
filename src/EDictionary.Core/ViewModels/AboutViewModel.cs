@@ -28,10 +28,9 @@ namespace EDictionary.Core.ViewModels
 		public AboutViewModel()
 		{
 			Authors = "Near Huscarl";
-
 			License = "BSD 3-Clauses";
 
-			licensePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LICENSE.rtf");
+			licensePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LICENSE.md");
 			sourceCodeURL = "https://github.com/NearHuscarl/E-Dictionary";
 			bugReportURL = "https://github.com/NearHuscarl/E-Dictionary/issues";
 
