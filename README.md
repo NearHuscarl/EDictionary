@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/NearHuscarl/E-Dictionary/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/License-BSD_3--Clauses-blue.svg?longCache=true" alt="BSD 3-Clause License"></a>
-  <a href="https://github.com/NearHuscarl/E-Dictionary/releases"><img src="https://img.shields.io/badge/Version-2.0.2-green.svg?longCache=true" alt="Version"></a>
+  <a href="https://github.com/NearHuscarl/EDictionary/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/License-BSD_3--Clauses-blue.svg?longCache=true" alt="BSD 3-Clause License"></a>
+  <a href="https://github.com/NearHuscarl/EDictionary/releases"><img src="https://img.shields.io/badge/Version-2.0.2-green.svg?longCache=true" alt="Version"></a>
 </p>
 
 ### Java implementation: [JDictionary]
